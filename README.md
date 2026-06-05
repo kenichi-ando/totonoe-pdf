@@ -39,3 +39,15 @@ One-time setup in the Cloudflare dashboard (Pages → Create a project → Conne
 
 After connecting, every push to `main` deploys automatically to
 `https://totonoe-pdf.pages.dev/`.
+
+#### Manual deploy (fallback)
+
+If the GitHub connection is broken (the Pages project shows
+"disconnected from your Git account"), deploy directly with Wrangler:
+
+```bash
+wrangler pages deploy public --project-name=pdf-utility --branch=main
+```
+
+`--branch=main` makes it a Production deploy so it reaches
+`https://totonoe-pdf.pages.dev/`.
