@@ -46,7 +46,7 @@ If the GitHub connection is broken (the Pages project shows
 "disconnected from your Git account"), deploy directly with Wrangler:
 
 ```bash
-wrangler pages deploy public --project-name=pdf-utility --branch=main
+wrangler pages deploy public --project-name=totonoe-pdf --branch=main
 ```
 
 `--branch=main` makes it a Production deploy so it reaches
