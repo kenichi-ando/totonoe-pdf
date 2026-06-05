@@ -24,6 +24,7 @@ const frontOrderSelect = document.getElementById("frontOrderSelect");
 const backOrderSelect = document.getElementById("backOrderSelect");
 const directionSelect = document.getElementById("directionSelect");
 const orderSelect = document.getElementById("orderSelect");
+const reencodeCheckbox = document.getElementById("reencodeCheckbox");
 const statusEl = document.getElementById("status");
 const downloadLink = document.getElementById("downloadLink");
 const resultThumbnails = document.getElementById("resultThumbnails");
@@ -86,10 +87,13 @@ runSplitBtn.addEventListener("click", async () => {
 
   const direction = directionSelect.value;
   const order = orderSelect.value;
+  const reencode = reencodeCheckbox.checked;
 
   try {
-    statusEl.textContent = "分割中...";
-    const result = await runSplit(inputFile, { direction, order });
+    statusEl.textContent = reencode
+      ? "分割中...（軽量化のため少し時間がかかります）"
+      : "分割中...";
+    const result = await runSplit(inputFile, { direction, order, reencode });
     await setResult(result.bytes, result.filename, result.thumbnailTags);
     statusEl.textContent = result.statusText;
   } catch (e) {

@@ -226,3 +226,9 @@ iframe {
 [hidden] {
   display: none !important;
 }
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
