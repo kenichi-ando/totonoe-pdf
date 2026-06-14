@@ -6,7 +6,7 @@ async function renderFirstPageToCanvas(bytes, canvas) {
   const pdf = await loadingTask.promise;
   const firstPage = await pdf.getPage(1);
   const baseViewport = firstPage.getViewport({ scale: 1 });
-  const targetWidth = 520;
+  const targetWidth = 220;
   const scale = targetWidth / baseViewport.width;
   const viewport = firstPage.getViewport({ scale });
   const ctx = canvas.getContext("2d");
